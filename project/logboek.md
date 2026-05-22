@@ -14,6 +14,6 @@ Ik heb nu een begrip van de main loop, wil niet zeggen dat ik het zelf kan schri
 Ik heb nog wat verder gedaan aan de tutorial, ik ben nu van plan om hem eerst volledig uit te kijken en te creeren voor ik ga twijfelen aan mezelf. En dan kan ik verder uitzoeken wat ik allemaal kan aanpassen want bepaalde dingen worden al duidelijker des te meer ik de tutorial kijk.
 
 ## 22 Mei 2026 - 12.50
-Ik heb de tutorial volledig afgewerkt ik had wat dingentjes vergeten te typen tijdens het kijken zoals reveal_dealer wat ervoor zorgde dat ik niet op STAND kon duwen terwijl ik tussen de 12 en 20 zat. Er wijn een hele boel dingen die ik niet begrijp maar elke keer ik het kijk en lees berijp ik toch ietsje meer :).
-Ik vond de tutorial makkelijk om te volgen maar soms ging hij wat te snel maar dat is normaal voor hem is dit gewoon hoe zijn brein als werkt, terwijl ik het nog moet leren.
-Ik zou het zelf totaal nog niet kunnen maken maar het is zel heel fijn om iets te creeeren en het dan te kunnen spelen. Nu ga ik starten aan mijn 20 uren eigen creativiteit.
+Ik heb de tutorial volledig afgewerkt ik had wat dingentjes vergeten te typen tijdens het kijken zoals reveal_dealer wat ervoor zorgde dat ik niet op STAND kon duwen terwijl ik tussen de 12 en 20 zat. Er zijn een hele boel dingen die ik niet begrijp maar elke keer dat ik het kijk en lees berijp ik toch ietsje meer :).
+Ik vond de tutorial makkelijk om te volgen maar soms ging hij wat te snel maar dat is normaal voor hem is dit gewoon hoe zijn brein al werkt, terwijl ik het nog moet leren.
+Ik zou het zelf totaal nog niet kunnen maken maar het is wel heel fijn om iets te creeeren en het dan te kunnen spelen. Nu ga ik starten aan mijn 20 uren eigen creativiteit.

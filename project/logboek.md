@@ -37,3 +37,6 @@ Animeum kaarten: Dit zouden meerdere verschillende hybride dieren zijn die allem
 of een andere die een panther/phoenix hybride is zij zou bv een kaart kunnen vernietigen van de tegenstander enzovoort.
 De concept-art voor een 25 tal hybride met krachten zijn al uitgewerkt dus ik kan daarvanuit afleiden. 
 
+## 25 Mei 2026 11:37
+Ik heb dit weekend mijn immages volledig afgewerkt, hier had ik een heleboel problemen mee want des te meer ik er maakte des te moeilijker de regels rondom afbeeldingen waren in chatgpt. ik heb vanmogen eindelijk de laatste set kunnen afwerken, klaarblijkelijk als je hem een 24 uur periode geeft om af te koelen worden de regels weer veel minder streng.
+Ik heb ondertussen ook veel zitten opzoeken van youtubefilmpjes en posts over wat ik ga moeten bekijken en deels gebruiken voor mijn eigen code. Om mijn kaarten allemaal te gebruiken moet ik een directory maken omdat ze allemaal verschillend zijn en allemaal een immage hebben. Ook heb ik filmpjes opgezocht over hoe ik een afbeelding kan toevoegen aan een kaart. Vandaag ga ik echt aan de code beginnen met zeer veel vallen en opstaan :). ik hoop vanavond ook een mailtje naar mijn leerkracht te kunnen sturen (ik denk dat ik vragen genoeg ga hebben). Zodat dit ook inorde is voor de deadline. Het is allemaal spannend maar ik sta te poppelen om mijn spel echt te creeeren.

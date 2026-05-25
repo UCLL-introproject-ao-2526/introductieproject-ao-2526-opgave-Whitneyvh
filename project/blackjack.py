@@ -4,15 +4,21 @@ import random
 import pygame
 
 # game variables
-cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-one_deck = 4 * cards
-decks = 4
+cards = ['1',2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14']
+suits = ['natuur', 'vuur', 'wind', 'water']
 
+one_deck = []
+
+for suit in suits:
+    for card in cards:
+        one_deck.append(f"{suit}_{card}")
+
+deck = 4
 
 pygame.init()
 
 #pygame window
-WIDTH = 600
+WIDTH = 600S
 HEIGHT = 900
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption('pygame Blackjack!')
@@ -84,10 +90,10 @@ def calculate_score(hand):
             if hand[i] == cards[j]:
                 hand_score += int(hand[i])
         # for 10 and face cards, add 10
-        if hand[i] in ['10', 'J', 'Q', 'K']:
+        if hand[i] in ['10', '11', '12', '13']:
             hand_score += 10
         # for aces start by adding 11, we'll check if we need to reduce afterwards
-        elif hand[i] == 'A':
+        elif hand[i] == '14':
             hand_score += 11
     # determine how many aces need to be 1 instead of 11 to get under 21 if possible
     if hand_score > 21 and aces_count > 0:

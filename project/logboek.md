@@ -48,7 +48,7 @@ Ik ben nu terug in het orgineel blackjack bestand gegaan en ga daar stap voor st
 Ik vind het spijtig dat ik het moet opgeven maar met de tijdsdruk wil ik toch we iets hebben en niet iets waarvan ik op het einde niet weet of het al een klein mini beetje klopt. Een eigen spel creeeren leer ik wel gaanderweg, ik mag niet vergeten dat dit mijn eerste stap is in programmeren en ik moet mezelf zeker uitdagen maar niet de haren uittrekken. :) Nu gaan we verder werken en het eerste wat we gaan doen is proberen een afbeelding op de kaarten te krijgen want hiervoor moet ik ook de suites inschakelen. zodat het weet dat het natuur 1 is en niet gewoon een 1.
 
 
-## 26 Mei 2026 18:56
+## 25 Mei 2026 18:56
 om afbeeldingen aan te passen wat moe tik allemaal doen stap 1 het deck een beetje veranderen zodat ik een suit heb en nummer heb zodat ik en bv natuur en 1 heb voor het deck. ik heb de code online gevonden in een stack overflow post en dan een beetje moeten veranderen naar de namen die we hebben want anders worden de parameters en functies onnuttig die we momenteel al hebben. 
 Dit heb ik al gedaan maar nu zit ik met het probleem dat het water_1 toont dus het vertoont geen afbeelding maar de naam van mijn afbeelding.
 Dus stap 2 is nu de afbeelding te laten zien op de kaart en niet de naam maar dit ga ik moeten zoeken ik de draw cards functie want deze functie zoals we zien tekent de kaarten.

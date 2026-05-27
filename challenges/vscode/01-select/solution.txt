@@ -1,1 +1,1 @@
-SHIFT+ARROW
+SHIFT+left

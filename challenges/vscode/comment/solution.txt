@@ -1,1 +1,1 @@
-CTRL+Shift+G,CTRL+/
+CTRL+/

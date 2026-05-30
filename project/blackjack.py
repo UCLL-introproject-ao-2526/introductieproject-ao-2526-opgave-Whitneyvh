@@ -22,15 +22,15 @@ for suit in suits:
     for card in cards:
         card_name = f"{suit}_{card}"
         folder_name = pygame.image.load(f'suits/{card_name}.png')
-        folder_name = pygame.transform.scale(folder_name, (115, 210))
+        folder_name = pygame.transform.scale(folder_name, (150, 270))
         cardpngs[card_name] = folder_name
         
 cardback = pygame.image.load(f'suits/cardback.png')
-cardback = pygame.transform.scale(cardback, (115, 210))
+cardback = pygame.transform.scale(cardback, (150, 270))
 
 #pygame window
-WIDTH = 600
-HEIGHT = 900
+WIDTH = 900
+HEIGHT = 1200
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption('pygame Blackjack!')
 fps = 60
@@ -63,27 +63,27 @@ def deal_cards(current_hand, current_deck):
 
 # draw scores for player and dealer on screen
 def draw_scores(player, dealer):
-    screen.blit(font.render(f'Score[{player}]', True, 'white'), (350, 400))
+    screen.blit(font.render(f'Score[{player}]', True, 'white'), (650, 400))
     if reveal_dealer:
-        screen.blit(cardpngs.render(f'Score[{dealer}]', True, 'white'), (350, 100))
+        screen.blit(font.render(f'Score[{dealer}]', True, 'white'), (650, 100))
 
 
 
 # draw cards visually onto screen
 def draw_cards(player, dealer, reveal):
     for i in range(len(player)):
-        pygame.draw.rect(screen, 'white', [70 + (70 *i), 460 + (5 * i), 120, 220], 0, 5)
-        screen.blit(cardpngs[player[i]], (75 + (70 *i), 465 + (5 * i)))
-        pygame.draw.rect(screen, 'red', [70 + (70 *i), 460 + (5 * i), 120, 220], 5, 5)
+        pygame.draw.rect(screen, 'white', [95 + (95 *i), 620 + (5 * i), 160, 280], 0, 5)
+        screen.blit(cardpngs[player[i]], (100 + (95 *i), 625 + (5 * i)))
+        pygame.draw.rect(screen, 'red', [95 + (95 *i), 620 + (5 * i), 160, 280], 5, 5)
 
     # If player hasn't finished turn, dealer will hide one card
     for i in range(len(dealer)):
-        pygame.draw.rect(screen, 'white', [70 + (70 *i), 160 + (5 * i), 120, 220], 0, 5)
+        pygame.draw.rect(screen, 'white', [95 + (95 *i), 220 + (5 * i), 155, 275], 0, 5)
         if i != 0 or reveal:
-            screen.blit(cardpngs[(dealer[i])], (75 + (70 *i), 165 + (5 * i)))
+            screen.blit(cardpngs[(dealer[i])], (100 + (95 *i), 220 + (5 * i)))
         else:
-            screen.blit(cardback, (75 + (70 *i), 165 + (5 * i)))
-        pygame.draw.rect(screen, 'blue', [70 + (70 *i), 160 + (5 * i), 120, 220], 5, 5)
+            screen.blit(cardback, (100 + (100 *i), 220 + (5 * i)))
+        pygame.draw.rect(screen, 'blue', [95 + (95 *i), 220 + (5 * i), 155, 275], 5, 5)
 
 
 
@@ -91,22 +91,23 @@ def draw_cards(player, dealer, reveal):
 def calculate_score(hand):
     #calculate hand score fresh every time, check how many aces we have
     hand_score = 0
-    aces_count = hand.count('14')
-    for i in range(len(hand)):
+    aces_count = 0
+    for kaart in hand:
+        waarde = kaart.split("_")[1]
         # for 1,2,3,4,5,6,7,8,9, - just add the number to total
-        for j in range(8):
-            if hand[i] == cards[j]:
-                hand_score += int(hand[i])
+        if waarde in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            hand_score += int(waarde)
         # for 10 and face cards, add 10
-        if hand[i] in ['10', '11', '12', '13']:
+        elif waarde in ['10', '11', '12', '13']:
             hand_score += 10
         # for aces start by adding 11, we'll check if we need to reduce afterwards
-        elif hand[i] == '14':
+        elif waarde == '14':
             hand_score += 11
-    # determine how many aces need to be 1 instead of 11 to get under 21 if possible
-    if hand_score > 21 and aces_count > 0:
+            aces_count += 1
+    # determine how many aces need to be 1 instead of 11 to get under 24 if possible
+    if hand_score > 24 and aces_count > 0:
         for i in range(aces_count):
-            if hand_score > 21:
+            if hand_score > 24:
                 hand_score -= 10
     return hand_score
             
@@ -117,33 +118,33 @@ def draw_game(act, record, result):
     button_list = []
     # Initially on startip (not active) only option is to deal new hand
     if not act:
-        deal = pygame.draw.rect(screen, 'white', [150, 20, 300, 100], 0, 5)
-        pygame.draw.rect(screen, 'green', [150, 20, 300, 100], 3, 5)
+        deal = pygame.draw.rect(screen, 'white', [300, 20, 300, 100], 0, 5)
+        pygame.draw.rect(screen, 'green', [300, 20, 300, 100], 3, 5)
         deal_text = font.render('DEAL HAND', True, 'black')
-        screen.blit(deal_text, (165, 50))
+        screen.blit(deal_text, (315, 50))
         button_list.append(deal)
     # once game started, shot hit and stand buttons and win/loss records
     else: 
-        hit = pygame.draw.rect(screen, 'white', [0, 700, 300, 100], 0, 5)
-        pygame.draw.rect(screen, 'green', [0, 700, 300, 100], 3, 5)
+        hit = pygame.draw.rect(screen, 'white', [0, 940, 450, 120], 0, 5)
+        pygame.draw.rect(screen, 'green', [0, 940, 450, 120], 3, 5)
         hit_text = font.render('HIT ME', True, 'black')
-        screen.blit(hit_text, (55, 735))
+        screen.blit(hit_text, (130, 980))
         button_list.append(hit)
-        stand = pygame.draw.rect(screen, 'white', [300, 700, 300, 100], 0, 5)
-        pygame.draw.rect(screen, 'green', [300, 700, 300, 100], 3, 5)
+        stand = pygame.draw.rect(screen, 'white', [450, 940, 450, 120], 0, 5)
+        pygame.draw.rect(screen, 'green', [450, 940, 450, 120], 3, 5)
         stand_text = font.render('STAND', True, 'black')
-        screen.blit(stand_text, (355, 735))
+        screen.blit(stand_text, (590, 980))
         button_list.append(stand)
         score_text = smaller_font.render(f'Wins: {record[0]}   Losses: {record[1]}   Draws: {record[2]}', True,  'white')
-        screen.blit(score_text, (15, 840))
+        screen.blit(score_text, (15, 1110))
     # if there is an outcome for the hand that is played, display a restart button and tell user what happened
     if result != 0:
         screen.blit(font.render(results[result], True, 'white'), (15, 25))
-        deal = pygame.draw.rect(screen, 'white', [150, 220, 300, 100], 0, 5)
-        pygame.draw.rect(screen, 'green', [150, 220, 300, 100], 3, 5)
-        pygame.draw.rect(screen, 'green', [153, 223, 294, 94], 3, 5)
+        deal = pygame.draw.rect(screen, 'white', [300, 420, 300, 100], 0, 5)
+        pygame.draw.rect(screen, 'green', [300, 420, 300, 100], 3, 5)
+        pygame.draw.rect(screen, 'green', [303, 423, 294, 94], 3, 5)
         deal_text = font.render('NEW HAND', True, 'black')
-        screen.blit(deal_text, (165, 250))
+        screen.blit(deal_text, (315, 450))
         button_list.append(deal)
     return  button_list
 
@@ -153,12 +154,12 @@ def draw_game(act, record, result):
 def check_endgame(hand_act, dealer_score, player_score, result, totals, add):
     #check end game scenarios is player has stood, busted or blackjacked
     #result 1- player bust, 2-win, 3-loss, 4-push
-    if not hand_act and dealer_score >= 17:
-        if player_score > 21:
+    if not hand_act and dealer_score >= 21:
+        if player_score > 24:
             result = 1
-        elif dealer_score < player_score <= 21 or dealer_score > 21:
+        elif dealer_score < player_score <= 24 or dealer_score > 24:
             result = 2
-        elif player_score < dealer_score <= 21:
+        elif player_score < dealer_score <= 24:
             result = 3
         else:
             result = 4
@@ -191,7 +192,7 @@ while run:
         draw_cards(my_hand, dealer_hand, reveal_dealer)
         if reveal_dealer:
             dealer_score = calculate_score(dealer_hand)
-            if dealer_score < 17:
+            if dealer_score < 21:
                 dealer_hand, game_deck = deal_cards(dealer_hand, game_deck)
         draw_scores(player_score, dealer_score)
     buttons = draw_game(active, records, outcome)
@@ -215,7 +216,7 @@ while run:
                     add_score = True
             else:
                 # if player can hit, allow them to draw a card
-                if buttons[0].collidepoint(event.pos) and player_score < 21 and hand_active:
+                if buttons[0].collidepoint(event.pos) and player_score < 24 and hand_active:
                     my_hand, game_deck = deal_cards(my_hand, game_deck)
                 # allow player to end turn (stand)
                 elif buttons[1].collidepoint(event.pos) and not reveal_dealer:
@@ -238,7 +239,7 @@ while run:
 
 
     # if player busts, automatically end turn  - treat like a stand
-    if hand_active and player_score >= 21:
+    if hand_active and player_score >= 24:
         hand_active = False
         reveal_dealer = True
 

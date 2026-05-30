@@ -60,3 +60,13 @@ Dit hebben we nu ondertussen ook gevonden en hierbij moeten spelen voor ze te la
 Ik heb eerst nog de cardback toegevoegd en dit ging al veel vlotter :) ik heb wel veel foutmeldingen gehad maar ik begrijp ze al beter. 
 nu zie ik dat ik een probleem heb met de score dus daar gaan we nu naar kijken dat is iets belangrijker dan de grootte van het hele spel. momenteel telt het niets bij van score.
 na een tijd te zoeken naar de fout waardoor het niet meer optelt is mijn enige optie nog om te vragen aan chatgpt om mij op weg te helpen met de fout, ik weet dat ze in het gedeelte calculate score gaan zitten en waarschijnlijk doordat mijn kaarten nu niet 1, 2 enzovoort noemen, maar ik ga mijn leerkracht hier eerst mee lastigvallen in de hoop dat hij me kan helpen want sommige stukken in het scoregedeelte begrijp ik niet.
+
+
+## 30 Mei 2026 8:23
+Ik heb maandag 25/05 een mail gestuurd voor feedback + een vraag over mijn project. Ik heb tot op het heden geen antwoord ontvangen. Ik kan begrijpen dat het heel erg druk is zo net voor de examenperiode, maar dit wil zeggen dat ik geen feedback kan geven over de feedback. Ik hoop dat u dit begrijpt. 
+
+## 30 Mei 2026 10:05
+Ik heb de grootte van alles aangepast zodat de kaarten beter leesbaar zijn. Het was ene heleboel proberen en de game opzetten niet goed terug opnieuw maar het is gelukt. Nu ga ik nog proberen om stap gewijs met chatgpt de score proberen aan te passen zodat het spel terug werkt. Ik ga aan chatgpt vragen om mij hints te geven in de juiste richting zodat ik zelf het misschien toch nog kan vinden hoe ik het moet opstellen om het spel te laten werken.
+
+## 30 Mei 2026 12:02
+Oke dus omdat de kaarten nu niet meer 1,2,3 enzovoort noemde maar natuur_1, vuur_1 en zo voort, moest ik de calculate score functie aanpassen. De code momenteel kom zeggen ah deze kaart noemt nummer 1 dit is waarde nummer 1. Zo kon hij dus tellen. Nu moest ik ervoor zorgen dat de naam van de kaart opgesplits werd naar "naam" en "nummer". Dit heb ik gedaan met split.kaart("_")[1]. daarna moest ik gewoon hand veranderen door waarde in de code. dit is me gelukt met chatgpt bijstand :). ik heb ook nog even veranderd dat de score nu tot 24 is en dealer minimum blijven trekken tot 21 dit was makkelijk alle 17 moesten vervangen worden door 21 en alle 21 door 24. Ik was enkel de 2 vergeten op het einde, wat ervoor zorgde dat het spel niet resetten, maar gewoon niets meer deed.
